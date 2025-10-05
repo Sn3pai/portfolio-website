@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Usman Malik — Portfolio</title>
+  <meta name="description" content="Portfolio of Usman Malik — Embedded systems, C++ projects, front-end developer." />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#94a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071029 0%, #071223 60%);-webkit-font-smoothing:antialiased}
+
+    header{position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(10,14,20,0.55), rgba(10,14,20,0.35));border-bottom:1px solid rgba(255,255,255,0.03);z-index:30}
+    .nav{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:white}
+
+    .container{max-width:1100px;margin:36px auto;padding:0 20px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.02)}
+
+    .intro h1{margin:0;font-size:32px;letter-spacing:-0.5px}
+    .intro p{color:var(--muted);line-height:1.5;margin-top:12px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#6d28d9);color:white;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(124,58,237,0.16);transition:transform .18s}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .btn:hover{transform:translateY(-3px)}
+
+    .summary{display:flex;flex-direction:column;gap:12px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .skill{background:var(--glass);padding:10px;border-radius:8px;text-align:center;font-weight:600}
+
+    section.projects{margin-top:34px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{position:relative;border-radius:12px;overflow:hidden;min-height:170px;display:flex;flex-direction:column}
+    .project img{width:100%;height:140px;object-fit:cover;display:block}
+    .project .meta{padding:12px;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.4));color:#e6eef8;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+    .project .meta h3{margin:0;font-size:16px}
+    .project .meta p{margin:0;color:var(--muted);font-size:13px}
+    .project .meta a.btn{margin-top:6px;padding:8px 14px;font-size:14px}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .contact-card{display:flex;gap:12px;align-items:center}
+    .icon{width:44px;height:44px;border-radius:10px;background:#071427;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin-top:34px;padding:24px 0;color:var(--muted);text-align:center}
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr 320px}.projects-grid{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:720px){.hero{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{padding:14px}}
+
+    .fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    .project:hover{transform:translateY(-6px);transition:transform .25s,box-shadow .25s}
+    .project{transition:transform .25s}
+
+    nav a{position:relative}
+    nav a::after{content:"";height:2px;background:var(--accent);position:absolute;left:0;right:0;bottom:-8px;transform:scaleX(0);transform-origin:left center;transition:transform .18s}
+    nav a:hover::after{transform:scaleX(1)}
+
+    .resume-block{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:12px;border-radius:8px;font-family:monospace;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">UM</div>
+        <div>
+          <div style="font-weight:700;color:#e6eef8">Usman Malik</div>
+          <div style="font-size:12px;color:var(--muted)">Electrical Engineer • Front-end dev • Embedded Systems</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="card intro fade-up">
+        <h1>Hi — I'm <span style="color:var(--accent)">Usman Malik</span></h1>
+        <p>A motivated and technically adept Electrical Engineering undergraduate at COMSATS Islamabad with hands-on experience in embedded systems, object-oriented programming, and front-end development. I build embedded projects, GUIs, and responsive web pages.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn secondary" href="/mnt/data/Usman_CV-updated.pdf" download>Download Resume</a>
+        </div>
+
+        <div class="grid" style="margin-top:20px">
+          <div class="skill">C++, C, Python</div>
+          <div class="skill">Embedded Systems</div>
+          <div class="skill">HTML, CSS, Java</div>
+        </div>
+      </div>
+
+      <aside class="summary card fade-up" style="animation-delay:.12s">
+        <div style="padding-top:10px">
+          <h3 style="margin:0">Contact</h3>
+          <div style="color:var(--muted);margin-top:8px">Email: <a href="mailto:ussiimalik07@gmail.com" style="color:var(--accent);text-decoration:none">ussiimalik07@gmail.com</a></div>
+          <div style="color:var(--muted)">Phone: 0332-2753666</div>
+          <div style="margin-top:8px"><a href="https://github.com/Sn3pai" target="_blank" style="color:var(--muted);text-decoration:none">github.com/Sn3pai</a></div>
+        </div>
+
+        <div style="margin-top:12px">
+          <h4 style="margin:0">Education</h4>
+          <div style="color:var(--muted);margin-top:8px">B.Sc Electrical Engineering — COMSATS University Islamabad (Sep 2023 – Jul 2027)</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <h2 style="color:#e6eef8">Projects</h2>
+      <p style="color:var(--muted)">A selection of projects covering embedded systems, C++ GUIs and data-structure based applications.</p>
+
+      <div class="projects-grid">
+
+        <!-- Sumo Robot -->
+         <article class="project card fade-up" style="animation-delay:.06s">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.s3LtWG2Q9_CMWh5kG1Uk-wHaFj?pid=Api" alt="Sumo Robot">
+      <div class="meta">
+        <div>
+          <h3>Sumo Robot (Arduino)</h3>
+          <p>Autonomous robot with IR sensors and L298 motor control.</p>
+        </div>
+        <a class="btn" href="#" target="_blank">GitHub Repo</a>
+      </div>
+        </article>
+
+        <!-- Tic Tac Toe -->
+        <article class="project card fade-up" style="animation-delay:.12s">
+         <img src="https://lh5.googleusercontent.com/Z15b5R5d5HKC8G5rJugnfeifFaWIp2KcSSgsqh9eQtN7Yk8vxrJwkzlP4F3oIoGLTLMMhujW4j15zfPxQe721HvrvRw9uQSx_VRGcndTm-Ts6JTClZeAN-Oaqinw3EX5NTMX_f4PLEQ1biDdWUY2HoSq88c2ONmAIOzLlEZnLMq4GDK5RVsWaJQ" alt="Tic Tac Toe GUI">
+         <div class="meta">
+             <div>
+                <h3>Tic Tac Toe (C++ GUI)</h3>
+                <p>Two-player GUI game using RAD & OOP principles.</p>
+            </div>
+            <a class="btn" href="https://github.com/Sn3pai/tic-tac-toe-in-C-with-GUI" target="_blank">GitHub Repo</a>
+        </div>
+        </article>
+
+
+        <!-- Job Enlisting Forum -->
+        <article class="project card fade-up" style="animation-delay:.18s">
+          <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="job forum">
+          <div class="meta">
+            <div>
+              <h3>Job Enlisting Forum (DSA)</h3>
+              <p>CLI platform using BSTs for job storage and retrieval.</p>
+            </div>
+            <a class="btn" href="https://github.com/Sn3pai/Job-Management-" target="_blank">GitHub Repo</a>
+          </div>
+        </article>
+
+        <!-- Atmega Clock -->
+        <article class="project card fade-up" style="animation-delay:.24s">
+          <img src="https://i.ytimg.com/vi/tJyGKT8W-jI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCpKIFeAsoYqGwo2PI79xvLTeGmyw" alt="Atmega/Arduino Clock">
+          <div class="meta">
+            <div>
+              <h3>Atmega328P Clock</h3>
+              <p>16×2 LCD clock using Arduino, DS1302 RTC module and I2C LCD.</p>
+            </div>
+            <a class="btn" href="https://github.com/Sn3pai/Atmega328P-Clock-" target="_blank">GitHub Repo</a>
+          </div>
+        </article>
+
+        <!-- Questionnaire -->
+        <article class="project card fade-up" style="animation-delay:.30s">
+          <img src="https://image.typedream.com/cdn-cgi/image/width=1080,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/fd5bd935-5552-4c45-b2a3-f82e6fb20e83/2Ue0jwNaDaoYOmzfY7U2vqv27Xe_Questgen_GIF_1.gif" alt="questionnaire">
+          <div class="meta">
+            <div>
+              <h3>Questionnaire Interface</h3>
+              <p>GUI-based multiple-choice interface developed in C++.</p>
+            </div>
+            <a class="btn" href="#" target="_blank">GitHub Repo</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Resume / Experience -->
+    <section id="resume" style="margin-top:30px">
+      <h2 style="color:#e6eef8">Resume</h2>
+      <p style="color:var(--muted)">Key highlights from my CV (full PDF is downloadable above).</p>
+
+      <div class="card" style="margin-top:12px">
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+          <div>
+            <h3 style="margin-top:0">Summary</h3>
+            <p style="color:var(--muted)">A motivated and technically adept Electrical Engineering undergraduate at COMSATS Islamabad with hands-on experience in embedded systems, object-oriented programming, and data structures. Demonstrated ability to develop robotics and GUI-based applications using Arduino, C++, and microcontrollers. Passionate about problem-solving, real-time systems, and automation technologies.</p>
+
+            <h3>Technical Skills</h3>
+            <div class="resume-block">
+              Programming: C++, C, Python, MATLAB<br>
+              Embedded: Arduino, L298, DC Motors, Sensors<br>
+              Tools: Proteus, AutoCAD, Multisim, Code::Blocks, Dev-C++, MATLAB GUI
+            </div>
+
+            <h3 style="margin-top:14px">Experience</h3>
+            <ul style="color:var(--muted)">
+              <li><strong>Exitech — Front-end Intern</strong> (Jul 2024 – Aug 2024)  
+                Built responsive web pages with HTML, CSS and Java; focused on front-end interfaces.</li>
+            </ul>
+
+            <h3 style="margin-top:14px">Projects (short)</h3>
+            <ul style="color:var(--muted)">
+              <li>Sumo Robot — Autonomous robot using Arduino UNO and L298</li>
+              <li>Tic Tac Toe — GUI (C++ / OOP)</li>
+              <li>Questionnaire Interface — GUI-based MCQ system</li>
+              <li>Job Enlisting Forum — BST-based job listing app (CLI)</li>
+              <li>Atmega328P Clock — 16×2 LCD clock on Arduino</li>
+            </ul>
+          </div>
+
+          <aside style="background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:14px;border-radius:10px">
+            <h3 style="margin:0">Education</h3>
+            <div style="color:var(--muted);margin-top:8px">
+              B.Sc Electrical Engineering — COMSATS University Islamabad (Sep 2023 – Jul 2027)
+            </div>
+            <div style="margin-top:12px">
+              <a class="btn" href="/mnt/data/Usman_CV-updated.pdf" download>Download full CV (PDF)</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:30px">
+      <h2 style="color:#e6eef8">Contact</h2>
+      <p style="color:var(--muted)">Let's connect — I'm open to internships, collaborations and front-end / embedded work.</p>
+
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <div class="icon">📧</div>
+          <div>
+            <div style="font-weight:700">Email</div>
+            <div style="color:var(--muted)">ussiimalik07@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <div class="icon">💻</div>
+          <div>
+            <div style="font-weight:700">GitHub</div>
+            <div><a href="https://github.com/Sn3pai" target="_blank" style="color:var(--accent);text-decoration:none">github.com/Sn3pai</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const els = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.style.animationPlayState='running'}})
+    },{threshold:.15});
+    els.forEach(el=>{io.observe(el);el.style.animationPlayState='paused'});
+  </script>
+</body>
+</html>
