@@ -30,7 +30,7 @@ It highlights my work in **Embedded Systems**, **C++ development**, and **Front-
 ## 🚀 Live Demo
 
 🔗 **Visit the portfolio:**  
-[https://Sn3pai.github.io/portfolio](https://Sn3pai.github.io/portfolio)  
+[https://Sn3pai.github.io/portfolio](https://sn3pai.github.io/portfolio-website)
 
 ---
 
