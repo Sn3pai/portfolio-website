@@ -39,7 +39,6 @@ It highlights my work in **Embedded Systems**, **C++ development**, and **Front-
 
 - **Email:** [ussiimalik07@gmail.com](mailto:ussiimalik07@gmail.com)  
 - **GitHub:** [https://github.com/Sn3pai](https://github.com/Sn3pai)  
-- **LinkedIn:** *(add here if you have one)*
 
 ---
 
