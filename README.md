@@ -31,7 +31,6 @@ It highlights my work in **Embedded Systems**, **C++ development**, and **Front-
 
 🔗 **Visit the portfolio:**  
 [https://Sn3pai.github.io/portfolio](https://Sn3pai.github.io/portfolio)  
-*(Link will work once GitHub Pages is enabled)*
 
 ---
 
