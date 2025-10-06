@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Usman Malik — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --accent: #7c3aed;
+      --muted: #94a3b8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: #e6eef8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    header {
+      width: 100%;
+      background: linear-gradient(90deg, var(--accent), #4c1d95);
+      padding: 16px 0;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    }
+
+    main {
+      max-width: 900px;
+      width: 90%;
+      margin-top: 24px;
+      background: rgba(255,255,255,0.04);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--accent), #6d28d9);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a.back:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 12px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Smooth fade-out when navigating back */
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>📄 Usman Malik — Resume</header>
+
+  <main>
+    <iframe src="Usman_CV-updated.pdf" title="Usman Malik Resume"></iframe>
+    <div style="text-align:center;">
+      <a href="index.html" class="back" id="backLink">⬅ Back to Portfolio</a>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> Usman Malik — All rights reserved.</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth transition when clicking Back button
+    document.getElementById('backLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 400);
+    });
+  </script>
+</body>
+</html>
